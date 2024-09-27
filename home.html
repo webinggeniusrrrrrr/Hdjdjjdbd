@@ -63,6 +63,25 @@
         .body {
 background-color: black;
         }
+	    #click-button:active {
+      transform: translateY(4px);
+      
+    }
+
+    .click {
+      animation: bounce 0.5s;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+	  }
   </style>
 </head>
 <body style="background-color: black; ;">
@@ -93,4 +112,15 @@ Save the date for Dev Coin Airdrop | 31 November 2024 |
 <button style="bottom: 70px; position: absolute; border-radius: 20px; left: 40px; background-color: #333; border-color: transparent;"><h3 style="color: white; bottom: 50px; font-size: 20px;">  Click the coin to start farming</h3> </button>
 </body>
 <script src="home.js"></script>
+	<script>
+  const image = document.getElementById('click-button');
+
+    image.addEventListener('click', () => {
+      image.classList.add('bounce');
+
+      setTimeout(() => {
+        image.classList.remove('bounce');
+      }, 5000);
+    });
+	</script>
   </html>
